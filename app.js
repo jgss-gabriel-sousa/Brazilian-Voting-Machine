@@ -6,6 +6,7 @@ const screenAside = document.querySelector(".d-1-right");
 const numbers = document.querySelector(".d-1-3");
 const restartButton = document.querySelector(".restart");
 const endText = document.querySelector(".end");
+const candidatesList = document.querySelector(".list");
 
 let currentState = 0;
 let currentNumber = '';
@@ -233,4 +234,26 @@ function execAudio(file){
 }
 
 
+function fillCandidatesList(){
+    let listHTML = "";
+
+    listHTML += "<h1>Lista de Candidatos</h1>";
+
+    for(let i in states){
+        if(i > 0){
+            listHTML += `<br/>`;
+        }
+
+        listHTML += `<p class="list-title">${states[i].title}:</p>`;
+
+        for(let j in states[i].candidates){
+            listHTML += `<p>${states[i].candidates[j].name} - ${states[i].candidates[j].number}</p>`;
+        }
+    }
+
+    candidatesList.innerHTML = listHTML;
+}
+
+
+fillCandidatesList();
 startState();

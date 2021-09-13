@@ -88,27 +88,3 @@ let states = [
         ]
     },
 ]
-
-let candidatesList = document.querySelector(".list");
-
-function fillCandidatesList(){
-    let listHTML = "";
-
-    listHTML += "<h1>Lista de Candidatos</h1>";
-
-    for(let i in states){
-        if(i > 0){
-            listHTML += `<br/>`;
-        }
-
-        listHTML += `<p class="list-title">${states[i].title}:</p>`;
-
-        for(let j in states[i].candidates){
-            listHTML += `<p>${states[i].candidates[j].name} - ${states[i].candidates[j].number}</p>`;
-        }
-    }
-
-    candidatesList.innerHTML = listHTML;
-}
-
-fillCandidatesList();
