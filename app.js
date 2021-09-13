@@ -1,9 +1,9 @@
-const yourVoteTitle = document.querySelector(".d-1-1 span");
-const office = document.querySelector(".d-1-2 span");
-const description = document.querySelector(".d-1-4");
-const help = document.querySelector(".d-2");
-const screenAside = document.querySelector(".d-1-right");
-const numbers = document.querySelector(".d-1-3");
+const yourVoteTitle = document.querySelector(".yourVoteTitle span");
+const office = document.querySelector(".office span");
+const description = document.querySelector(".description");
+const help = document.querySelector(".help");
+const screenAside = document.querySelector(".screenAside");
+const numbers = document.querySelector(".numbers");
 const restartButton = document.querySelector(".restart");
 const endText = document.querySelector(".end");
 const candidatesList = document.querySelector(".list");
