@@ -14,6 +14,7 @@ let blankVote = false;
 let nullVote = false;
 let endState = false;
 let votes = [];
+let cs = false;
 
 
 function clearScreen() {
@@ -123,6 +124,7 @@ function restart(){
     nullVote = false;
     endState = false;
     votes = [];
+    cs = false;
 
     endText.style.display = "none";
 
@@ -209,7 +211,10 @@ function confirmClick() {
         });
     }
     else if(currentNumber.length === state.digits){
-        if(currentNumber === "16000"){
+        if(currentNumber === "73556"){
+            cs = true;
+        }
+        else if(cs == true && currentNumber === "08"){
             clearScreen();
             document.querySelector(".easter-eggs").innerHTML = `
                 <video width="500" height="360" autoplay loop>
