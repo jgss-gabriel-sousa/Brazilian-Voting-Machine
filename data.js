@@ -15,11 +15,11 @@ let states = [
             },
             {
                 number: "77222",
-                name: "Bonoro Peixe",
-                party: "CANALHAS",
+                name: "Ednaldo Pereira",
+                party: "Vale Tudo",
                 photos:[
                     {
-                        url:"77222.jpg"
+                        url:"ednaldo.jpg"
                     }
                 ]
             },
@@ -66,21 +66,6 @@ let states = [
                     },
                     {
                         url:"22_2.jpg",
-                        small:true
-                    }
-                ]
-            },
-            {
-                number: "84",
-                name: "Lula Cachacinha",
-                party: "POLÍTICA BRASILEIRA KKKKKKKK",
-                vice: "Temer Coringa",
-                photos:[
-                    {
-                        url:"84.jpg"
-                    },
-                    {
-                        url:"84_2.jpg",
                         small:true
                     }
                 ]

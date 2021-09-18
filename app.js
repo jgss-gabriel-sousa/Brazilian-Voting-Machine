@@ -16,6 +16,18 @@ let endState = false;
 let votes = [];
 
 
+function clearScreen() {
+    yourVoteTitle.style.display = "none";
+    restartButton.style.display = "none";
+    help.style.display = "none";
+    office.innerHTML = "";
+    description.innerHTML = "";
+    screenAside.innerHTML = "";
+    numbers.innerHTML = "";
+    document.querySelector(".easter-eggs").innerHTML = "";
+}
+
+
 function startState() {
     let state = states[currentState];
 
@@ -32,12 +44,8 @@ function startState() {
         }
     }
     
-    yourVoteTitle.style.display = "none";
+    clearScreen();
     office.innerHTML = state.title.toUpperCase();
-    description.innerHTML = "";
-    help.style.display = "none";
-    screenAside.innerHTML = "";
-    restartButton.style.display = "none";
     numbers.innerHTML = numberHTML;
 }
 
@@ -99,19 +107,12 @@ function interfaceUpdate() {
 function endScreen() {
     endState = true;
 
-    endText.style.display = "flex";
+    clearScreen();
 
-    yourVoteTitle.style.display = "none";
-    restartButton.style.display = "none";
-    help.style.display = "none";
-    office.innerHTML = "";
-    description.innerHTML = "";
-    screenAside.innerHTML = "";
-    numbers.innerHTML = "";
+    endText.style.display = "flex";
+    restartButton.style.display = "block";
 
     execAudio("end");
-
-    restartButton.style.display = "block";
 }
 
 
@@ -208,6 +209,16 @@ function confirmClick() {
         });
     }
     else if(currentNumber.length === state.digits){
+        if(currentNumber === "16000"){
+            clearScreen();
+            document.querySelector(".easter-eggs").innerHTML = `
+                <video width="500" height="360" autoplay loop>
+                    <source src="cs.v" type="video/mp4">
+                </video>
+            `;
+            return;
+        }
+        
         confirmedVote = true;
         votes.push({
             state: states[currentState].title,
