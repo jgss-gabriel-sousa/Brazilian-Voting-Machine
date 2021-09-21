@@ -142,6 +142,15 @@ function keyClick(n) {
 
     const elNumber = document.querySelector(".number.blink");
 
+    if(cs == true && document.getElementById("cs") != null){
+        if(n != 0){
+            document.getElementById("cs").volume = (n/10)+0.1;
+        }
+        else{
+            document.getElementById("cs").volume = 0;
+        }
+    }
+
     if(elNumber !== null){
         elNumber.innerHTML = n;
         currentNumber += `${n}`;
@@ -217,7 +226,7 @@ function confirmClick() {
         else if(cs == true && currentNumber === "08"){
             clearScreen();
             document.querySelector(".easter-eggs").innerHTML = `
-                <video width="500" height="360" autoplay loop>
+                <video id="cs" width="500" height="360" autoplay loop>
                     <source src="cs.v" type="video/mp4">
                 </video>
             `;
@@ -268,6 +277,11 @@ function fillCandidatesList(){
     }
 
     candidatesList.innerHTML = listHTML;
+}
+
+
+function volumeCtrl(n) {
+    alert(n);
 }
 
 
