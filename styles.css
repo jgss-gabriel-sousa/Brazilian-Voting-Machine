@@ -6,12 +6,12 @@
 
 body {
     margin: 0;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 h1 {
@@ -28,7 +28,7 @@ h1 {
 }
 
 .screen {
-    width: 500px;
+    width: 400px;
     height: 360px;
     background: linear-gradient(to right, #e8e8e8, #c1c1c1);
     border: 2px solid #555;
@@ -41,7 +41,6 @@ h1 {
     padding: 20px;
     border-radius: 5px;
     font-size: 12px;
-    display: grid;
     line-height: 0.8;
     margin: 20px;
     box-shadow: 2px 2px 2px #555;
@@ -284,4 +283,26 @@ h1 {
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+@media only screen and (max-width: 850px) {
+    body {
+        justify-content: normal;
+    }
+}
+@media only screen and (max-width: 500px) {
+    body {
+        justify-content: center;
+    }
+    .machine {
+        flex-direction: column;
+    }
+    .keyboard {
+        margin-left: 0;
+        justify-content: center;
+        padding: 5px;
+    }
+    .screen {
+        width: 300px;
+    }
 }
