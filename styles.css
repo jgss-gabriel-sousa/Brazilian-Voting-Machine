@@ -24,7 +24,7 @@ h1 {
     display: flex;
     margin: 20px;
     border: 2px solid #adaba6;
-    box-shadow: 2px 2px 2px #555;
+    box-shadow: inset -5px 5px 0px 5px #555;
 }
 
 .screen {

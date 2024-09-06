@@ -226,7 +226,7 @@ function confirmClick() {
         else if(cs == true && currentNumber === "08"){
             clearScreen();
             document.querySelector(".easter-eggs").innerHTML = `
-                <video id="cs" width="500" height="360" autoplay loop>
+                <video id="cs" width="400" height="360" autoplay loop>
                     <source src="cs.v" type="video/mp4">
                 </video>
             `;
