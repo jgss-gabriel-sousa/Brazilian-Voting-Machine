@@ -14,7 +14,7 @@ let blankVote = false;
 let nullVote = false;
 let endState = false;
 let votes = [];
-let cs = false;
+let FLAG_CS = false;
 
 
 function clearScreen() {
@@ -124,7 +124,7 @@ function restart(){
     nullVote = false;
     endState = false;
     votes = [];
-    cs = false;
+    FLAG_CS = false;
 
     endText.style.display = "none";
 
@@ -221,9 +221,9 @@ function confirmClick() {
     }
     else if(currentNumber.length === state.digits){
         if(currentNumber === "73556"){
-            cs = true;
+            FLAG_CS = true;
         }
-        else if(cs == true && currentNumber === "08"){
+        else if(FLAG_CS == true && currentNumber === "08"){
             clearScreen();
             document.querySelector(".easter-eggs").innerHTML = `
                 <video id="cs" width="400" height="360" autoplay loop>
